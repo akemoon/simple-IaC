@@ -24,13 +24,15 @@ resource "cloudru_evolution_compute" "compute" {
 
   network_interfaces {
     subnet {
-      name = var.subnet_name
+      name = cloudru_evolution_subnet.subnet.name
     }
 
     security_groups {
       id = local.security_group.id
     }
 
-    # TODO: add ip
+    fip {
+      id = cloudru_evolution_fip.fip.id
+    }
   }
 }

@@ -1,3 +1,7 @@
+# -----------------------
+# Common vars
+# -----------------------
+
 variable "project_id" {
   description = "Cloudru project id"
 }
@@ -12,49 +16,71 @@ variable "cloudru_key_secret" {
   sensitive   = true
 }
 
-variable "host_name" {
-  description = "Host name"
-  default     = "compute"
+# -----------------------
+# Subnet vars
+# -----------------------
+
+variable "subnet_name" {
+  default = "subnet_1"
 }
 
-variable "flavor_name" {
-  description = "Name of Evolution VM flavor"
-  default     = "lowcost10-2-4"
+variable "subnet_address" {
+  default = "192.168.0.0/24"
+}
+
+variable "gateway_address" {
+  default = "192.168.0.1"
+}
+
+variable "dns_address" {
+  default = ["192.168.0.2"]
+}
+
+variable "default_subnet" {
+  default = true
 }
 
 variable "availability_zone_name" {
-  description = "Name of availability zone"
-  default     = "ru.AZ-1"
+  default = "ru.AZ-1"
+}
+
+# -----------------------
+# Floating IP vars
+# -----------------------
+
+variable "fip_name" {
+  default = "fip_1"
+}
+
+# -----------------------
+# Compute vars
+# -----------------------
+
+variable "host_name" {
+  default = "compute1"
+}
+
+variable "flavor_name" {
+  description = "Name of Evolution VM config type"
+  default     = "lowcost10-2-4"
 }
 
 variable "image_name" {
-  description = "OS image name"
-  default     = "ubuntu-22.04"
+  default = "ubuntu-22.04"
 }
 
 variable "user_name" {
-  description = "Username on the host"
-  default     = "user"
+  default = "user1"
 }
 
-variable "pub_ssh_key" {
-  description = "Public ssh key"
-}
+variable "pub_ssh_key" {}
 
 variable "boot_disk_name" {
-  description = "Boot disk name"
-  default     = "boot-disk"
+  default = "boot-disk"
 }
 
 variable "boot_disk_size" {
-  description = "Boot disk size"
-  default     = 10
+  default = 10
 }
 
-variable "subnet_name" {
-  description = "Subnet name"
-}
-
-variable "security_group_name" {
-  description = "Security group name"
-}
+variable "security_group_name" {}
