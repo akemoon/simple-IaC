@@ -21,7 +21,7 @@ variable "cloudru_key_secret" {
 # -----------------------
 
 variable "subnet_name" {
-  default = "subnet_1"
+  default = "default_subnet"
 }
 
 variable "subnet_address" {
@@ -49,7 +49,15 @@ variable "availability_zone_name" {
 # -----------------------
 
 variable "fip_name" {
-  default = "fip_1"
+  default = "default_fip"
+}
+
+# -----------------------
+# Security group vars
+# -----------------------
+
+variable "security_group_name" {
+  default = "default_sg"
 }
 
 # -----------------------
@@ -82,5 +90,3 @@ variable "boot_disk_name" {
 variable "boot_disk_size" {
   default = 10
 }
-
-variable "security_group_name" {}

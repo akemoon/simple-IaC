@@ -28,7 +28,7 @@ resource "cloudru_evolution_compute" "compute" {
     }
 
     security_groups {
-      id = local.security_group.id
+      id = cloudru_evolution_security_group.security_group.id
     }
 
     fip {
