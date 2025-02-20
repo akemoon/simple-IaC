@@ -10,7 +10,7 @@ resource "cloudru_evolution_compute" "compute" {
     name       = var.image_name
     host_name  = var.host_name
     user_name  = var.user_name
-    public_key = var.pub_ssh_key
+    public_key = var.public_ssh_key
   }
 
   boot_disk {

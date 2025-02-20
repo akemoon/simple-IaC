@@ -1,0 +1,25 @@
+- name: Configure server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 86400
+
+    - name: Install utilities
+      apt:
+        name:
+          - net-tools
+          - neofetch
+        state: present
+    
+    - name: Install Nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx
+      service:
+        name: nginx
+        state: started

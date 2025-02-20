@@ -33,7 +33,7 @@ variable "gateway_address" {
 }
 
 variable "dns_address" {
-  default = ["192.168.0.2"]
+  default = ["8.8.8.8"]
 }
 
 variable "default_subnet" {
@@ -81,7 +81,7 @@ variable "user_name" {
   default = "user1"
 }
 
-variable "pub_ssh_key" {}
+variable "public_ssh_key" {}
 
 variable "boot_disk_name" {
   default = "boot-disk"
@@ -90,3 +90,9 @@ variable "boot_disk_name" {
 variable "boot_disk_size" {
   default = 10
 }
+
+# -----------------------
+# Ansible vars
+# -----------------------
+
+variable "private_ssh_key_path" {}
