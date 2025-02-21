@@ -4,6 +4,10 @@ terraform {
       source  = "cloud.ru/cloudru/cloud"
       version = "1.0.0"
     }
+    null = {
+      source = "hashicorp/null"
+      version = "3.2.1"
+    }
   }
 }
 
@@ -15,3 +19,5 @@ provider "cloudru" {
   auth_key_id        = var.cloudru_key_id
   auth_secret        = var.cloudru_key_secret
 }
+
+provider "null" {}
